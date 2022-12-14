@@ -7,12 +7,41 @@ $input = readInput(__DIR__);
 // Task code
 function part01(array $input)
 {
+    $calories = [];
+    $count = 0;
 
+    foreach ($input as $elf ) {
+        if ($elf === '') {
+            $count++;
+            continue;
+        }
+
+        isset($calories[$count]) ? : $calories[$count] = 0;
+
+        $calories[$count] += $elf;
+    }
+
+    return max($calories);
 }
 
 function part02(array $input)
 {
+    $calories = [];
+    $count = 0;
 
+    foreach ($input as $elf ) {
+        if ($elf === '') {
+            $count++;
+            rsort($calories);
+            continue;
+        }
+
+        isset($calories[$count]) ? : $calories[$count] = 0;
+
+        $calories[$count] += $elf;
+    }
+
+    return $calories[0] + $calories[1] + $calories[2];
 }
 
 // Execute
