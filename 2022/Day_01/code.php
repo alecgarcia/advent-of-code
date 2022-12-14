@@ -58,6 +58,6 @@ saveBenchmarkTime($executionTime, __DIR__);
 
 // Task test
 testResults(
-    [], // Expected
+    [70698, 206643], // Expected
     [$result01, $result02], // Result
 );
